@@ -5,6 +5,11 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
+        System.out.println("iniciando a Tabela Hash");
+        // avisar que a tabela estra vazia
+        System.out.println("Tabela Hash vazia!");
+        
+        
         mainhash hash= new mainhash();
         int escolha = 0;
         try (Scanner Scanner = new Scanner(System.in)) {

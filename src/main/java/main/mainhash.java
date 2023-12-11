@@ -46,6 +46,29 @@ public class mainhash {
     } 
 
     void procurar_nome(String nome){
+        System.out.println();
+        // procurar o nome na tabela hash com rehashing
+        hashCode = hash(nome);
+        String chave = nome;
+
+        //System.out.println("Chave: " + chave + " HashCode: " + hashCode);
+
+        if (tabHash[hashCode] == null) {
+            System.out.println("Nome não encontrado em 1 (uma) tentativa!");
+        } else {
+            for (int i = hashCode; i < tabHash.length; i++) {
+                if (tabHash[i] != null) {
+                    if (tabHash[i].equals(chave)) {
+                        System.out.println("Nome encontrado em " + (i - hashCode + 1) + " tentativas!");
+                        break;
+                    }
+                } else {
+                    System.out.println("Nome não encontrado em " + (i - hashCode + 1) + " tentativas!");
+                    break;
+                }
+            }
+        }
+        System.out.println();
 
 
     }
@@ -73,5 +96,5 @@ public class mainhash {
         return null;
     }
 
-    
+
 }
